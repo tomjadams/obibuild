@@ -5,9 +5,10 @@ package org.obi.attr
  */
 sealed trait SrcDir
 
-// TODO Make this take a classpath
+// TODO Make this take a filepath
 private final case class SrcDir_(srcdir: String) extends SrcDir
 
 object SrcDir {
+    // TODO Make this take a filepath
     def srcdir(srcdir: String): SrcDir = SrcDir_(srcdir)
 }
