@@ -5,6 +5,7 @@ package org.obi.attr
  */
 sealed trait SrcDir
 
+// TODO Make this take a classpath
 private final case class SrcDir_(srcdir: String) extends SrcDir
 
 object SrcDir {
