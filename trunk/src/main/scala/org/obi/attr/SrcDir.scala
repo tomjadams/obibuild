@@ -5,6 +5,7 @@ package org.obi.attr
  */
 sealed trait SrcDir
 
+// TODO Rename to SourceDirectory
 // TODO Make this take a filepath
 private final case class SrcDir_(srcdir: String) extends SrcDir
 
