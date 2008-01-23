@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class Validation in scalaz.validation</title>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></meta><meta content="scaladoc (version 2.6.1-final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">Scalaz 2.3</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table><div align="right"><img alt="Workingmouse" src="http://projects.workingmouse.com/public/resources/images/logo_full_transparent.png"></img></div>
+        
+      <div class="entity">
+        <a href="../../scalaz/validation$package.html" target="_self">scalaz.validation</a>
+        <br></br>
+        <span class="entity">class  Validation</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="scalaz/validation/Validation"><code>scalaz/validation/Validation.scala</code></a>]
+      </div><hr></hr>
+      <a name="Validation"></a><dl>
+      <dt>
+        
+        <code>sealed abstract</code>
+        <code>class</code>
+        <em>Validation</em>[<em>SM</em>, <em>ERR</em>, <em>A</em>](<code>implicit </code><em>s</em> : <a href="../../scalaz/control/Semigroup.html" target="_self">Semigroup</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>[<a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>]])
+      </dt>
+      <dd><code> extends </code><a href="../../scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../scalaz/validation/Validation.html#*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CA%5D%29" target="_self">*&gt;</a></em>
+        (<em>v</em> : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>])(<code>implicit </code><em>f</em> : (<a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>, <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>) =&gt; <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>) : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29" target="_self">&gt;*&gt;</a></em>
+        [<em>B</em>, <em>C</em>](<em>v</em> : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#B" target="_self">B</a>], <em>f</em> : (<a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>, <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#B" target="_self">B</a>) =&gt; <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#C" target="_self">C</a>) : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#C" target="_self">C</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../scalaz/validation/Validation.html#%7E%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%29" target="_self">~&gt;</a></em>
+        [<em>B</em>](<em>v</em> : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#%7E%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%29#B" target="_self">B</a>]) : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, (<a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>, <a href="../../scalaz/validation/Validation.html#%7E%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%29#B" target="_self">B</a>)]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="../../scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="../../scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="../../scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="../../scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="../../scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="../../scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="../../scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="../../scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="../../scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="../../scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="../../scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="../../scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="../../scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="../../scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="../../scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="../../scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="../../scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="../../scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&gt;*&gt;</em>[<em>B</em>, <em>C</em>](<em>v</em> : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#B" target="_self">B</a>], <em>f</em> : (<a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>, <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#B" target="_self">B</a>) =&gt; <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#C" target="_self">C</a>) : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#%3E*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%2C%28A%2CB%29%3D%3EC%29#C" target="_self">C</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="*%3E%28scalaz.validation.Validation%5BSM%2CERR%2CA%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>*&gt;</em>(<em>v</em> : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>])(<code>implicit </code><em>f</em> : (<a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>, <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>) =&gt; <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>) : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="%7E%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>~&gt;</em>[<em>B</em>](<em>v</em> : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, <a href="../../scalaz/validation/Validation.html#%7E%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%29#B" target="_self">B</a>]) : <a href="../../scalaz/validation/Validation.html" target="_self">Validation</a>[<a href="../../scalaz/validation/Validation.html#SM" target="_self">SM</a>, <a href="../../scalaz/validation/Validation.html#ERR" target="_self">ERR</a>, (<a href="../../scalaz/validation/Validation.html#A" target="_self">A</a>, <a href="../../scalaz/validation/Validation.html#%7E%3E%28scalaz.validation.Validation%5BSM%2CERR%2CB%5D%29#B" target="_self">B</a>)]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">Scalaz 2.3</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>
