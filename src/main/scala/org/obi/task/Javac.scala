@@ -12,7 +12,7 @@ import org.obi.io.file.FilePath
  * </ul>
  */
 sealed trait Javac {
-    // Tom: Write more apply's here, to handle different attributes, files, etc.
+    // TODO Write more apply's here, to handle different attributes, files, etc.
     def apply(srcdir: SrcDir): Javac = this match {
         case Javac_(_) => Javac_(Some(srcdir))
     }
