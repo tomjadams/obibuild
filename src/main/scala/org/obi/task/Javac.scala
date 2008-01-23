@@ -1,5 +1,6 @@
 package org.obi.task
 
+import org.obi.attr.DestDir
 import org.obi.attr.SrcDir
 import org.obi.io.file.FilePath
 
@@ -14,7 +15,11 @@ import org.obi.io.file.FilePath
 sealed trait Javac {
     // TODO Write more apply's here, to handle different attributes, files, etc.
     def apply(srcdir: SrcDir): Javac = this match {
-        case Javac_(_) => Javac_(Some(srcdir))
+        case Javac_(_, d) => Javac_(Some(srcdir), d)
+    }
+
+    def apply(destdir: DestDir): Javac = this match {
+        case Javac_(s, _) => Javac_(s, Some(destdir))
     }
 
     def srcdir(s: FilePath) = apply(SrcDir.srcdir(s))
@@ -22,13 +27,19 @@ sealed trait Javac {
     def srcdir = this match {
         case Javac_(s) => s
     }
+
+    def destdir(d: FilePath) = apply(DestDir.destdir(s))
+
+    def destdir = this match {
+        case Javac_(_, d) => d
+    }
 }
 
-private final case class Javac_(s: Option[SrcDir]) extends Javac
+private final case class Javac_(s: Option[SrcDir], d: Option[DestDir]) extends Javac
 
 object Javac {
     /**
      * Creates a new Java compiler.
      */
-    def javac: Javac = Javac_(None)
+    def javac: Javac = Javac_(None, None)
 }
