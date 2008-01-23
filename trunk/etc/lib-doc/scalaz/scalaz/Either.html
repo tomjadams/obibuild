@@ -1,0 +1,1341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait Either in scalaz</title>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></meta><meta content="scaladoc (version 2.6.1-final)" name="generator"></meta><link href="../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">Scalaz 2.3</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table><div align="right"><img alt="Workingmouse" src="http://projects.workingmouse.com/public/resources/images/logo_full_transparent.png"></img></div>
+        
+      <div class="entity">
+        <a href="../scalaz$package.html" target="_self">scalaz</a>
+        <br></br>
+        <span class="entity">trait  Either</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="scalaz/Either"><code>scalaz/Either.scala</code></a>]
+      </div><hr></hr>
+      <a name="Either"></a><dl>
+      <dt>
+        
+        <code>sealed</code>
+        <code>trait</code>
+        <em>Either</em>[+<em>A</em>, +<em>B</em>]
+      </dt>
+      <dd><code> extends </code><a href="../scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd><p>
+ The <code>Either</code> type represents a value of one of two possible types (a disjoint union).
+ The data constructors; <code>Left</code> and <code>Right</code> represent the two possible 
+ values. The <code>Either</code> type is often used as an alternative to 
+ <code>scala.Option</code> where <code>Left</code> represents failure (by convention) and
+ <code>Right</code> is akin to <code>Some</code>.
+ </p></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Author</b></dt><dd><a href="mailto:code@tmorris.net">Tony Morris</a></dd><dt style="margin:10px 0 0 20px;">
+        <b>Version</b></dt><dd>1.0</dd></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../scalaz/Left.html" target="_self">Left</a>, <a href="../scalaz/Right.html" target="_self">Right</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%2B%3E%28%3D%3EX%29" target="_self">+&gt;</a></em>
+        [<em>X</em>, <em>Y</em>](<em>x</em> : =&gt; <a href="../scalaz/Either.html#%2B%3E%28%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%2B%3E%28%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        <div>Maps the constant argument through <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%2B%28%3D%3EY%29" target="_self">&lt;+</a></em>
+        [<em>X</em>, <em>Y</em>](<em>y</em> : =&gt; <a href="../scalaz/Either.html#%3C%2B%28%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%2B%28%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the constant argument through <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29" target="_self">&lt;&lt;</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>e</em> : =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]
+        
+        <div>Binds the given constant across <code>Left</code>. This is like calling 
+   <code>flatMapLeft</code> where the argument to the given function is ignored.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29" target="_self">&lt;&lt;=</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]
+        
+        <div>Binds the given function across <code>Left</code>. Synonym for <code>flatMapLeft</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%7C%28%3D%3E%28A%29%3D%3EX%29" target="_self">&lt;|</a></em>
+        [<em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%28%3D%3E%28A%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%28%3D%3E%28A%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        <div>Maps the function argument through <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29" target="_self">&lt;|&gt;</a></em>
+        [<em>X</em>, <em>Y</em>](<em>fa</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#X" target="_self">X</a>, <em>fb</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the first function argument if this is a <code>Left</code> or the second function 
+   argument if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29" target="_self">&lt;||</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>X</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#C" target="_self">C</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#BB" target="_self">BB</a>]
+        
+        <div>Maps the function argument twice through <code>Left</code> (lift2).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29" target="_self">&lt;|||</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>D</em>, <em>X</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#D" target="_self">D</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#BB" target="_self">BB</a>]
+        
+        <div>Maps the function argument three times through <code>Left</code> (lift3).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29" target="_self">&lt;||||</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>X</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#E" target="_self">E</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>]
+        
+        <div>Maps the function argument four times through <code>Left</code> (lift4).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29" target="_self">&lt;|||||</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>F</em>, <em>X</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ef</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#F" target="_self">F</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#F" target="_self">F</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>]
+        
+        <div>Maps the function argument five times through <code>Left</code> (lift5).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29" target="_self">&gt;&gt;</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>e</em> : =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]
+        
+        <div>Binds the given constant across <code>Right</code>. This is like calling <code>flatMap</code>
+   where the argument to the given function is ignored.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29" target="_self">&gt;&gt;=</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]
+        
+        <div>Binds the given function across <code>Right</code>. Synonym for <code>flatMap</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3F%28%3D%3EX%2C%3D%3EX%29" target="_self">?</a></em>
+        [<em>X</em>](<em>left</em> : =&gt; <a href="../scalaz/Either.html#%3F%28%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>, <em>right</em> : =&gt; <a href="../scalaz/Either.html#%3F%28%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#%3F%28%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>
+        
+        <div>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching) where neither the <code>Right</code> or <code>Left</code> values are not 
+   used.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3F%3C%28%3D%3E%28A%29%3D%3EUnit%29" target="_self">?&lt;</a></em>
+        (<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Executes the given side-effect if this is a <code>Left</code> with its value.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%3F%3E%28%28B%29%3D%3EUnit%29" target="_self">?&gt;</a></em>
+        (<em>f</em> : (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Executes the given side-effect if this is a <code>Right</code> with its value.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29" target="_self">ap</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#AA" target="_self">AA</a>, (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#X" target="_self">X</a>]
+        
+        <div>Function application within Either on the right.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29" target="_self">apLeft</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[(<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#BB" target="_self">BB</a>]
+        
+        <div>Function application within Either on the left.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29" target="_self">either</a></em>
+        [<em>X</em>](<em>ax</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>, <em>bx</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>
+        
+        <div>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#filter%28%28%3D%3EB%29%3D%3EBoolean%29" target="_self">filter</a></em>
+        [<em>X</em>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>left</em> : =&gt; <a href="../scalaz/Either.html#filter%28%28%3D%3EB%29%3D%3EBoolean%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#filter%28%28%3D%3EB%29%3D%3EBoolean%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        <div>Filters through a <code>Right</code> value.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#filterLeft%28%28%3D%3EA%29%3D%3EBoolean%29" target="_self">filterLeft</a></em>
+        [<em>X</em>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>right</em> : =&gt; <a href="../scalaz/Either.html#filterLeft%28%28%3D%3EA%29%3D%3EBoolean%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#filterLeft%28%28%3D%3EA%29%3D%3EBoolean%29#X" target="_self">X</a>]
+        
+        <div>Filters through a <code>Left</code> value.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29" target="_self">flatMap</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]
+        
+        <div>Binds the given function across <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29" target="_self">flatMapLeft</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]
+        
+        <div>Binds the given function across <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29" target="_self">forLeft</a></em>
+        [<em>X</em>](<em>left</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>, <em>right</em> : =&gt; <a href="../scalaz/Either.html#forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>
+        
+        <div>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching) where the <code>Right</code> value is not used.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29" target="_self">forRight</a></em>
+        [<em>X</em>](<em>left</em> : =&gt; <a href="../scalaz/Either.html#forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>, <em>right</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>
+        
+        <div>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching) where the <code>Left</code> value is not used.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#foreach%28%3D%3E%28B%29%3D%3EUnit%29" target="_self">foreach</a></em>
+        (<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Executes the given side-effect if this is a <code>Right</code> with its value.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#ifLeft%28%3D%3EUnit%29" target="_self">ifLeft</a></em>
+        (<em>e</em> : =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Executes the given side-effect if this is a <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#ifRight%28%3D%3EUnit%29" target="_self">ifRight</a></em>
+        (<em>e</em> : =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Executes the given side-effect if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#isLeft" target="_self">isLeft</a></em>
+         : <a href="../scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>Returns <code>true</code> if this is a <code>Left</code>, <code>false</code> otherwise.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#isRight" target="_self">isRight</a></em>
+         : <a href="../scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>Returns <code>true</code> if this is a <code>Right</code>, <code>false</code> otherwise.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#left" target="_self">left</a></em>
+         : <a href="../scalaz/Either.html#A" target="_self">A</a>
+        
+        <div>Returns the value from this <code>Left</code> or fails if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#left%28%3D%3E%28B%29%3D%3EAA%29" target="_self">left</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#left%28%3D%3E%28B%29%3D%3EAA%29#AA" target="_self">AA</a>) : <a href="../scalaz/Either.html#left%28%3D%3E%28B%29%3D%3EAA%29#AA" target="_self">AA</a>
+        
+        <div>Returns the value from this <code>Left</code> or the result of the given argument if this is a
+   <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#mapIf%28%28%3D%3EB%29%3D%3EBoolean%29" target="_self">mapIf</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>left</em> : =&gt; <a href="../scalaz/Either.html#mapIf%28%28%3D%3EB%29%3D%3EBoolean%29#AA" target="_self">AA</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapIf%28%28%3D%3EB%29%3D%3EBoolean%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#mapIfLeft%28%28%3D%3EA%29%3D%3EBoolean%29" target="_self">mapIfLeft</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>right</em> : =&gt; <a href="../scalaz/Either.html#mapIfLeft%28%28%3D%3EA%29%3D%3EBoolean%29#BB" target="_self">BB</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#mapIfLeft%28%28%3D%3EA%29%3D%3EBoolean%29#BB" target="_self">BB</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29" target="_self">mapx</a></em>
+        [<em>X</em>, <em>Y</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <em>y</em> : =&gt; <a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the first function argument if this is a <code>Left</code> or uses the second constant
+   argument if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29" target="_self">mapxy</a></em>
+        [<em>X</em>, <em>Y</em>](<em>x</em> : =&gt; <a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <em>y</em> : =&gt; <a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Uses the first constant argument if this is a <code>Left</code> or the second constant 
+   argument if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29" target="_self">mapy</a></em>
+        [<em>X</em>, <em>Y</em>](<em>x</em> : =&gt; <a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#X" target="_self">X</a>, <em>f</em> : (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Uses the first constant argument if this is a <code>Left</code> or the second function 
+   argument if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#orLeft%28%3D%3EAA%29" target="_self">orLeft</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>](<em>or</em> : =&gt; <a href="../scalaz/Either.html#orLeft%28%3D%3EAA%29#AA" target="_self">AA</a>) : <a href="../scalaz/Either.html#orLeft%28%3D%3EAA%29#AA" target="_self">AA</a>
+        
+        <div>Returns the value from this <code>Left</code> or the result of the given argument if this is a
+   <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#orRight%28%3D%3EBB%29" target="_self">orRight</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>](<em>or</em> : =&gt; <a href="../scalaz/Either.html#orRight%28%3D%3EBB%29#BB" target="_self">BB</a>) : <a href="../scalaz/Either.html#orRight%28%3D%3EBB%29#BB" target="_self">BB</a>
+        
+        <div>Returns the value from this <code>Right</code> or the result of the given argument if this is 
+   a <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#right" target="_self">right</a></em>
+         : <a href="../scalaz/Either.html#B" target="_self">B</a>
+        
+        <div>Returns the value from this <code>Right</code> or fails if this is a <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#right%28%3D%3E%28A%29%3D%3EBB%29" target="_self">right</a></em>
+        [<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#right%28%3D%3E%28A%29%3D%3EBB%29#BB" target="_self">BB</a>) : <a href="../scalaz/Either.html#right%28%3D%3E%28A%29%3D%3EBB%29#BB" target="_self">BB</a>
+        
+        <div>Returns the value from this <code>Right</code> or the result of the given argument if this is a
+   <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#toOption" target="_self">toOption</a></em>
+         : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        <div>Returns a <code>Some</code> containing the <code>Right</code> value if it exists or a 
+   <code>None</code> if this is a <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#toOptionLeft" target="_self">toOptionLeft</a></em>
+         : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>]
+        
+        <div>Returns a <code>Some</code> containing the <code>Left</code> value if it exists or a 
+   <code>None</code> if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#toSeq" target="_self">toSeq</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        <div>Returns a <code>Seq</code> containing the <code>Right</code> value if it exists or an empty
+   <code>Seq</code> if this is a <code>Left</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#toSeqLeft" target="_self">toSeqLeft</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>]
+        
+        <div>Returns a <code>Seq</code> containing the <code>Left</code> value if it exists or an empty
+   <code>Seq</code> if this is a <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#unary_%7E" target="_self">unary_~</a></em>
+         : <a href="" target="contentFrame" class="scala/Product">scala.Product</a><code> with </code><a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#A" target="_self">A</a>]
+        
+        <div>If this is a <code>Left</code>, then return the value in <code>Right</code> and vice versa.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#usingLeft%28%3D%3E%28A%29%3D%3EUnit%29" target="_self">usingLeft</a></em>
+        (<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        <div>Executes the given side-effect if this is a <code>Left</code> with its value and returns
+   <code>this</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#usingRight%28%3D%3E%28B%29%3D%3EUnit%29" target="_self">usingRight</a></em>
+        (<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+        
+        <div>Executes the given side-effect if this is a <code>Right</code> with its value and returns
+   <code>this</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%7C%3E%28%3D%3E%28B%29%3D%3EY%29" target="_self">|&gt;</a></em>
+        [<em>Y</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#%7C%3E%28%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%7C%3E%28%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the function argument through <code>Right</code>.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29" target="_self">||&gt;</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>Y</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#C" target="_self">C</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#C" target="_self">C</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the function argument twice through <code>Right</code> (lift2).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29" target="_self">|||&gt;</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>D</em>, <em>Y</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#C" target="_self">C</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#D" target="_self">D</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#D" target="_self">D</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the function argument three times through <code>Right</code> (lift3).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29" target="_self">||||&gt;</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>Y</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#C" target="_self">C</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#D" target="_self">D</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#E" target="_self">E</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#E" target="_self">E</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the function argument four times through <code>Right</code> (lift4).</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29" target="_self">|||||&gt;</a></em>
+        [<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>F</em>, <em>Y</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#C" target="_self">C</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#D" target="_self">D</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#E" target="_self">E</a>], <em>ef</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#F" target="_self">F</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#F" target="_self">F</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#Y" target="_self">Y</a>]
+        
+        <div>Maps the function argument five times through <code>Right</code> (lift5).</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="../scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="../scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="../scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="../scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="../scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="../scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="../scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="../scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="../scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="../scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="../scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="../scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="../scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="../scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="../scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="../scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="../scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="../scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="left"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>left</em> : <a href="../scalaz/Either.html#A" target="_self">A</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns the value from this <code>Left</code> or fails if this is a <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="right"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>right</em> : <a href="../scalaz/Either.html#B" target="_self">B</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns the value from this <code>Right</code> or fails if this is a <code>Left</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="unary_%7E"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>unary_~</em> : <a href="" target="contentFrame" class="scala/Product">scala.Product</a><code> with </code><a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#A" target="_self">A</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>If this is a <code>Left</code>, then return the value in <code>Right</code> and vice versa.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="isLeft"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isLeft</em> : <a href="../scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns <code>true</code> if this is a <code>Left</code>, <code>false</code> otherwise.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="isRight"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isRight</em> : <a href="../scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns <code>true</code> if this is a <code>Right</code>, <code>false</code> otherwise.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3F%3C%28%3D%3E%28A%29%3D%3EUnit%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>?&lt;</em>(<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Executes the given side-effect if this is a <code>Left</code> with its value.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>f - </code>The side-effect to execute.</dd></dl>
+    <hr></hr>
+<a name="%3F%3E%28%28B%29%3D%3EUnit%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>?&gt;</em>(<em>f</em> : (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Executes the given side-effect if this is a <code>Right</code> with its value.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>f - </code>The side-effect to execute.</dd></dl>
+    <hr></hr>
+<a name="ifLeft%28%3D%3EUnit%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>ifLeft</em>(<em>e</em> : =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Executes the given side-effect if this is a <code>Left</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>e - </code>The side-effect to execute.</dd></dl>
+    <hr></hr>
+<a name="ifRight%28%3D%3EUnit%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>ifRight</em>(<em>e</em> : =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Executes the given side-effect if this is a <code>Right</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>e - </code>The side-effect to execute.</dd></dl>
+    <hr></hr>
+<a name="usingLeft%28%3D%3E%28A%29%3D%3EUnit%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>usingLeft</em>(<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Executes the given side-effect if this is a <code>Left</code> with its value and returns
+   <code>this</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>f - </code>The side-effect to execute.</dd></dl>
+    <hr></hr>
+<a name="usingRight%28%3D%3E%28B%29%3D%3EUnit%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>usingRight</em>(<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Executes the given side-effect if this is a <code>Right</code> with its value and returns
+   <code>this</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>f - </code>The side-effect to execute.</dd></dl>
+    <hr></hr>
+<a name="either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>either</em>[<em>X</em>](<em>ax</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>, <em>bx</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#either%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>forLeft</em>[<em>X</em>](<em>left</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>, <em>right</em> : =&gt; <a href="../scalaz/Either.html#forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#forLeft%28%3D%3E%28A%29%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching) where the <code>Right</code> value is not used.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>forRight</em>[<em>X</em>](<em>left</em> : =&gt; <a href="../scalaz/Either.html#forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>, <em>right</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#forRight%28%3D%3EX%2C%3D%3E%28B%29%3D%3EX%29#X" target="_self">X</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching) where the <code>Left</code> value is not used.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3F%28%3D%3EX%2C%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>?</em>[<em>X</em>](<em>left</em> : =&gt; <a href="../scalaz/Either.html#%3F%28%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>, <em>right</em> : =&gt; <a href="../scalaz/Either.html#%3F%28%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html#%3F%28%3D%3EX%2C%3D%3EX%29#X" target="_self">X</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Deconstruction of the <code>Either</code> type using continutation passing (in contrast to
+   pattern matching) where neither the <code>Right</code> or <code>Left</code> values are not 
+   used.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="left%28%3D%3E%28B%29%3D%3EAA%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>left</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#left%28%3D%3E%28B%29%3D%3EAA%29#AA" target="_self">AA</a>) : <a href="../scalaz/Either.html#left%28%3D%3E%28B%29%3D%3EAA%29#AA" target="_self">AA</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns the value from this <code>Left</code> or the result of the given argument if this is a
+   <code>Right</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>f - </code>The function that is supplied the <code>Right</code> value.</dd></dl>
+    <hr></hr>
+<a name="right%28%3D%3E%28A%29%3D%3EBB%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>right</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#right%28%3D%3E%28A%29%3D%3EBB%29#BB" target="_self">BB</a>) : <a href="../scalaz/Either.html#right%28%3D%3E%28A%29%3D%3EBB%29#BB" target="_self">BB</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns the value from this <code>Right</code> or the result of the given argument if this is a
+   <code>Left</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>f - </code>The function that is supplied the <code>Left</code> value.</dd></dl>
+    <hr></hr>
+<a name="orLeft%28%3D%3EAA%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>orLeft</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>](<em>or</em> : =&gt; <a href="../scalaz/Either.html#orLeft%28%3D%3EAA%29#AA" target="_self">AA</a>) : <a href="../scalaz/Either.html#orLeft%28%3D%3EAA%29#AA" target="_self">AA</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns the value from this <code>Left</code> or the result of the given argument if this is a
+   <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="orRight%28%3D%3EBB%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>orRight</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>](<em>or</em> : =&gt; <a href="../scalaz/Either.html#orRight%28%3D%3EBB%29#BB" target="_self">BB</a>) : <a href="../scalaz/Either.html#orRight%28%3D%3EBB%29#BB" target="_self">BB</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns the value from this <code>Right</code> or the result of the given argument if this is 
+   a <code>Left</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;|&gt;</em>[<em>X</em>, <em>Y</em>](<em>fa</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#X" target="_self">X</a>, <em>fb</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%3E%28%3D%3E%28A%29%3D%3EX%2C%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the first function argument if this is a <code>Left</code> or the second function 
+   argument if this is a <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mapx</em>[<em>X</em>, <em>Y</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <em>y</em> : =&gt; <a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#mapx%28%3D%3E%28A%29%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the first function argument if this is a <code>Left</code> or uses the second constant
+   argument if this is a <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="mapy%28%3D%3EX%2C%28B%29%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mapy</em>[<em>X</em>, <em>Y</em>](<em>x</em> : =&gt; <a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#X" target="_self">X</a>, <em>f</em> : (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#mapy%28%3D%3EX%2C%28B%29%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Uses the first constant argument if this is a <code>Left</code> or the second function 
+   argument if this is a <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="mapxy%28%3D%3EX%2C%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mapxy</em>[<em>X</em>, <em>Y</em>](<em>x</em> : =&gt; <a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <em>y</em> : =&gt; <a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#mapxy%28%3D%3EX%2C%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Uses the first constant argument if this is a <code>Left</code> or the second constant 
+   argument if this is a <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%7C%3E%28%3D%3E%28B%29%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>|&gt;</em>[<em>Y</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#%7C%3E%28%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%7C%3E%28%3D%3E%28B%29%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument through <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>||&gt;</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>Y</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#C" target="_self">C</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#C" target="_self">C</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2C%3D%3E%28B%2CC%29%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument twice through <code>Right</code> (lift2).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>|||&gt;</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>D</em>, <em>Y</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#C" target="_self">C</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#D" target="_self">D</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#D" target="_self">D</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2C%3D%3E%28B%2CC%2CD%29%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument three times through <code>Right</code> (lift3).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>||||&gt;</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>Y</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#C" target="_self">C</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#D" target="_self">D</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#E" target="_self">E</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#E" target="_self">E</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2C%3D%3E%28B%2CC%2CD%2CE%29%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument four times through <code>Right</code> (lift4).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>|||||&gt;</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>F</em>, <em>Y</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#C" target="_self">C</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#D" target="_self">D</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#E" target="_self">E</a>], <em>ef</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#F" target="_self">F</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#F" target="_self">F</a>) =&gt; <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%7C%7C%7C%7C%7C%3E%28scalaz.Either%5BAA%2CC%5D%2Cscalaz.Either%5BAA%2CD%5D%2Cscalaz.Either%5BAA%2CE%5D%2Cscalaz.Either%5BAA%2CF%5D%2C%3D%3E%28B%2CC%2CD%2CE%2CF%29%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument five times through <code>Right</code> (lift5).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3C%7C%28%3D%3E%28A%29%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;|</em>[<em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%28%3D%3E%28A%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%28%3D%3E%28A%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument through <code>Left</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;||</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>X</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#C" target="_self">C</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2C%3D%3E%28A%2CC%29%3D%3EX%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument twice through <code>Left</code> (lift2).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;|||</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>D</em>, <em>X</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#D" target="_self">D</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2C%3D%3E%28A%2CC%2CD%29%3D%3EX%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument three times through <code>Left</code> (lift3).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;||||</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>X</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#E" target="_self">E</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%29%3D%3EX%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument four times through <code>Left</code> (lift4).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;|||||</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>C</em>, <em>D</em>, <em>E</em>, <em>F</em>, <em>X</em>](<em>ec</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ed</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ee</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>ef</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#F" target="_self">F</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>], <em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#C" target="_self">C</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#D" target="_self">D</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#E" target="_self">E</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#F" target="_self">F</a>) =&gt; <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%7C%7C%7C%7C%7C%28scalaz.Either%5BC%2CBB%5D%2Cscalaz.Either%5BD%2CBB%5D%2Cscalaz.Either%5BE%2CBB%5D%2Cscalaz.Either%5BF%2CBB%5D%2C%3D%3E%28A%2CC%2CD%2CE%2CF%29%3D%3EX%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the function argument five times through <code>Left</code> (lift5).</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="filter%28%28%3D%3EB%29%3D%3EBoolean%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filter</em>[<em>X</em>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>left</em> : =&gt; <a href="../scalaz/Either.html#filter%28%28%3D%3EB%29%3D%3EBoolean%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#filter%28%28%3D%3EB%29%3D%3EBoolean%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Filters through a <code>Right</code> value.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="filterLeft%28%28%3D%3EA%29%3D%3EBoolean%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filterLeft</em>[<em>X</em>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>right</em> : =&gt; <a href="../scalaz/Either.html#filterLeft%28%28%3D%3EA%29%3D%3EBoolean%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#filterLeft%28%28%3D%3EA%29%3D%3EBoolean%29#X" target="_self">X</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Filters through a <code>Left</code> value.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="mapIf%28%28%3D%3EB%29%3D%3EBoolean%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mapIf</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>left</em> : =&gt; <a href="../scalaz/Either.html#mapIf%28%28%3D%3EB%29%3D%3EBoolean%29#AA" target="_self">AA</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#mapIf%28%28%3D%3EB%29%3D%3EBoolean%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="mapIfLeft%28%28%3D%3EA%29%3D%3EBoolean%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mapIfLeft</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>](<em>f</em> : (=&gt; <a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scala/Boolean.html" target="_self">Boolean</a>)(<em>right</em> : =&gt; <a href="../scalaz/Either.html#mapIfLeft%28%28%3D%3EA%29%3D%3EBoolean%29#BB" target="_self">BB</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#mapIfLeft%28%28%3D%3EA%29%3D%3EBoolean%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="%2B%3E%28%3D%3EX%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>+&gt;</em>[<em>X</em>, <em>Y</em>](<em>x</em> : =&gt; <a href="../scalaz/Either.html#%2B%3E%28%3D%3EX%29#X" target="_self">X</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%2B%3E%28%3D%3EX%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the constant argument through <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3C%2B%28%3D%3EY%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;+</em>[<em>X</em>, <em>Y</em>](<em>y</em> : =&gt; <a href="../scalaz/Either.html#%3C%2B%28%3D%3EY%29#Y" target="_self">Y</a>) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>, <a href="../scalaz/Either.html#%3C%2B%28%3D%3EY%29#Y" target="_self">Y</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Maps the constant argument through <code>Left</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="foreach%28%3D%3E%28B%29%3D%3EUnit%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>foreach</em>(<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scala/Unit.html" target="_self">Unit</a>) : <a href="../scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Executes the given side-effect if this is a <code>Right</code> with its value.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>f - </code>The side-effect to execute.</dd></dl>
+    <hr></hr>
+<a name="%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&gt;&gt;=</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%3D%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Binds the given function across <code>Right</code>. Synonym for <code>flatMap</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>The - </code>function to bind across <code>Right</code>.</dd></dl>
+    <hr></hr>
+<a name="%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&gt;&gt;</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>e</em> : =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#%3E%3E%28%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Binds the given constant across <code>Right</code>. This is like calling <code>flatMap</code>
+   where the argument to the given function is ignored.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>The - </code>constant to bind across <code>Right</code>.</dd></dl>
+    <hr></hr>
+<a name="flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>flatMap</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#flatMap%28%3D%3E%28B%29%3D%3Escalaz.Either%5BAA%2CX%5D%29#X" target="_self">X</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Binds the given function across <code>Right</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>The - </code>function to bind across <code>Right</code>.</dd></dl>
+    <hr></hr>
+<a name="%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;&lt;=</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%3D%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Binds the given function across <code>Left</code>. Synonym for <code>flatMapLeft</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>The - </code>function to bind across <code>Left</code>.</dd></dl>
+    <hr></hr>
+<a name="%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>&lt;&lt;</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>e</em> : =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#%3C%3C%28%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Binds the given constant across <code>Left</code>. This is like calling 
+   <code>flatMapLeft</code> where the argument to the given function is ignored.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>The - </code>constant to bind across <code>Left</code>.</dd></dl>
+    <hr></hr>
+<a name="flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>flatMapLeft</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>f</em> : =&gt; (<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#flatMapLeft%28%3D%3E%28A%29%3D%3Escalaz.Either%5BX%2CBB%5D%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Binds the given function across <code>Left</code>.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>The - </code>function to bind across <code>Left</code>.</dd></dl>
+    <hr></hr>
+<a name="ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>ap</em>[<em>AA</em> &gt;: <a href="../scalaz/Either.html#A" target="_self">A</a>, <em>X</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#AA" target="_self">AA</a>, (<a href="../scalaz/Either.html#B" target="_self">B</a>) =&gt; <a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#X" target="_self">X</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#AA" target="_self">AA</a>, <a href="../scalaz/Either.html#ap%28scalaz.Either%5BAA%2C%28B%29%3D%3EX%5D%29#X" target="_self">X</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Function application within Either on the right.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>e - </code>The Either of the function to apply on the right.</dd></dl>
+    <hr></hr>
+<a name="apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>apLeft</em>[<em>BB</em> &gt;: <a href="../scalaz/Either.html#B" target="_self">B</a>, <em>X</em>](<em>e</em> : <a href="../scalaz/Either.html" target="_self">Either</a>[(<a href="../scalaz/Either.html#A" target="_self">A</a>) =&gt; <a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#BB" target="_self">BB</a>]) : <a href="../scalaz/Either.html" target="_self">Either</a>[<a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#X" target="_self">X</a>, <a href="../scalaz/Either.html#apLeft%28scalaz.Either%5B%28A%29%3D%3EX%2CBB%5D%29#BB" target="_self">BB</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Function application within Either on the left.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>e - </code>The Either of the function to apply on the left.</dd></dl>
+    <hr></hr>
+<a name="toSeq"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>toSeq</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a <code>Seq</code> containing the <code>Right</code> value if it exists or an empty
+   <code>Seq</code> if this is a <code>Left</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toSeqLeft"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>toSeqLeft</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a <code>Seq</code> containing the <code>Left</code> value if it exists or an empty
+   <code>Seq</code> if this is a <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toOption"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>toOption</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../scalaz/Either.html#B" target="_self">B</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a <code>Some</code> containing the <code>Right</code> value if it exists or a 
+   <code>None</code> if this is a <code>Left</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toOptionLeft"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>toOptionLeft</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../scalaz/Either.html#A" target="_self">A</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a <code>Some</code> containing the <code>Left</code> value if it exists or a 
+   <code>None</code> if this is a <code>Right</code>.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">Scalaz 2.3</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

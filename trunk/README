@@ -1,0 +1,7 @@
+Obi is a build too for Scala and Java
+
+Notes
+
+- Support builing Java classes as well as Scala
+- Support sbaz for dependencies?
+
