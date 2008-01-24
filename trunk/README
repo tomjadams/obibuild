@@ -1,7 +1,58 @@
-Obi is a build too for Scala and Java
+                                  ***********
+***********************************   Obi   ***********************************
+                                  ***********
 
-Notes
+                       <http://obibuild.googlecode.com/>
 
-- Support builing Java classes as well as Scala
-- Support sbaz for dependencies?
+
+* What is Obi? *
+
+Obi is a build tool for Scala and Java projects. Obi uses a flexible DSL style 
+syntax to specify a build configuration.
+
+
+* Distribution Contents *
+
+The distribution contains the following contents:
+
+o README                       - This readme file.
+o LICENCE                      - Obi licence file.
+o NOTICE                       - Licence notices for libraries used in Obi.
+o RELEASE-NOTES                - Release notes for this & previous releases.
+o obi-<version>.jar            - Obi Jar file.
+o obi-<version>-scaladoc.jar   - Obi API scaladoc.
+o obi-<version>-src.zip        - Obi source code.
+o lib/                         - Libraries required by Obi at runtime, see below for details.
+
+Obi depends on the following libraries at runtime.
+
+o ant-1.7.0.jar
+o scala-compiler-2.6.1.jar
+o scala-library-2.6.1.jar
+o scalaz-2.3.jar
+
+
+* Documentation *
+
+Documentation can be found at: http://obibuild.googlecode.com/.
+
+
+* Source *
+
+Source code is available within the obi-<version>-src.jar. Complete source is
+available at: http://obibuild.googlecode.com/
+
+
+* Contributions *
+
+Developers
+o Tom Adams
+o Paul O'Keeffe
+
+Contributions
+o Tony Morris
+
+Thanks to the work done on Scala, Scalaz, SAnt & Ant.
+
+Obi development and research is sponsored by Workingmouse: http://workingmouse.com/.
 
