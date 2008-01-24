@@ -82,8 +82,8 @@ object ObiManualTests {
 
     def antJavacTests {
         !javac(
-            srcdir("/Users/atom/Projects/scala/obi/src/main/scala")).
-            destdir("/Users/atom/Projects/scala/obi/build/main-classes").
+            srcdir("src/main/scala")).
+            destdir("build/main-classes").
             srcfiles(List("Foo.java", "Bar.java"))
     }
 
