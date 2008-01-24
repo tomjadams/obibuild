@@ -1,11 +1,17 @@
 package org.obi.example
 
+import org.obi.ant.AntJavac
+import org.obi.ant.AntJavac._
 import org.obi.attr.ClassPath
 import org.obi.attr.ClassPath._
 import org.obi.attr.FilePattern
 import org.obi.attr.FilePattern._
+import org.obi.attr.SrcDir
+import org.obi.attr.SrcDir._
 import org.obi.io.file.FilePath
 import org.obi.io.file.FilePath._
+import org.obi.task.Javac
+import org.obi.task.Javac._
 
 object ObiManualTests {
 
@@ -74,9 +80,17 @@ object ObiManualTests {
         println(p3)
     }
 
+    def antJavacTests {
+        !javac(
+            srcdir("/Users/atom/Projects/scala/obi/src/main/scala")).
+            destdir("/Users/atom/Projects/scala/obi/build/main-classes").
+            srcfiles(List("Foo.java", "Bar.java"))
+    }
+
     def main(args: Array[String]) {
-        filepathTest
-        classpathTest
-        filepatternTests
+//        filepathTest
+//        classpathTest
+//        filepatternTests
+        antJavacTests
     }
 }
