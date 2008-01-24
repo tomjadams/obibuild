@@ -9,6 +9,6 @@ sealed trait DestDir
 
 private final case class DestDir_(destdir: FilePath) extends DestDir
 
-object DestinationDirectory {
+object DestDir {
     def destdir(destdir: FilePath): DestDir = DestDir_(destdir)
 }
