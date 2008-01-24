@@ -20,22 +20,20 @@
     <property name="src.dir" value="src/main"/>
     <property name="spec.dir" value="src/spec"/>
 
-    <property name="main.src.dir" value="${src.dir}/java"/>
-    <property name="spec.src.dir" value="${spec.dir}/java"/>
+    <property name="main.src.dir" value="${src.dir}/scala"/>
+    <property name="spec.src.dir" value="${spec.dir}/scala"/>
     <property name="main.classes.dir" value="${build.dir}/main-classes"/>
     <property name="spec.classes.dir" value="${build.dir}/spec-classes"/>
     <property name="release.dir" value="${build.dir}/release"/>
     <property name="scaladoc.dir" value="${build.dir}/scaladoc"/>
 
-    <property name="compile.debug" value="true"/>
-    <property name="compile.debuglevel" value="source,lines,vars"/>
-    <property name="compile.deprecation" value="false"/>
-    <property name="compile.optimize" value="true"/>
-    <property name="java.src.version" value="1.5"/>
-    <property name="spec.results.dir" value="${build.dir}/spec-results"/>
+    <property name="compile.unchecked" value="on"/>
+    <property name="compile.deprecation" value="on"/>
+    <property name="compile.force" value="never"/>
 
     <patternset id="all.code.pattern">
         <include name="**/*.scala"/>
+        <exclude  name="**/SAntExample.scala"/>
     </patternset>
 
     <patternset id="main.classpath.pattern">
