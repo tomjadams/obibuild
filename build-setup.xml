@@ -41,8 +41,8 @@
 
     <patternset id="main.classpath.pattern">
         <include name="${lib.dir}/scala/*.jar"/>
-        <include name="${lib.dir}/ant/ant-*.jar"/>
-        <include name="${lib.dir}/scalaz/scalaz*.jar"/>
+        <include name="${lib.dir}/ant/*.jar"/>
+        <include name="${lib.dir}/scalaz/*.jar"/>
     </patternset>
     <patternset id="spec.classpath.pattern">
         <patternset refid="main.classpath.pattern"/>
