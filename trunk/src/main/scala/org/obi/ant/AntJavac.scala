@@ -24,13 +24,13 @@ final class AntJavac(j: Javac) {
 
     def srcfiles(srcFiles: List[String]) = new ExecutableTask {
         override def execute {
-
-            // TODO Set the project basedir
+            // TODO Set the project basedir, expose it somewhere.
             project.init
-            // TODO Expose the project name somewhere
+            // TODO Expose the project name somewhere.
             project.setName(project.getBaseDir.getName)
 
             println("Basedir: " + project.getBaseDir)
+            println("Project name: " + project.getName)
 
             j.srcdir.foreach(srcdir => {
                 println("Setting srcdir: " + srcdir)
