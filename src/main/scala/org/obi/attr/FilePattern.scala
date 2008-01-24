@@ -1,7 +1,7 @@
 package org.obi.attr
 
 /**
- * The path to a file on a filesystem.
+ * The path to a file on a filesystem.<br/>
  * Usage:
  * <pre>
  * import org.obi.attr.FilePattern

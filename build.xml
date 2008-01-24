@@ -48,10 +48,10 @@
         </sequential>
     </macrodef>
 
-    <target name="-scaladoc">
+    <target name="-scaladoc" depends="-compile">
         <mkdir dir="${scaladoc.dir}"/>
-        <scaladoc srcdir="${main.src.dir}" destdir="${scaladoc.dir}" classpathref="main.class.path"
-                windowtitle="${project.longname} ${project.version.full}" doctitle="${project.longname} ${project.version.full}">
+        <scaladoc srcdir="${main.src.dir}" destdir="${scaladoc.dir}" classpathref="main.class.path" excludes="${exclude.src.files}"
+                windowtitle="${project.midname} ${project.version.full}" doctitle="${project.longname}&lt;br/&gt;Version ${project.version.full}">
             <patternset refid="all.code.pattern"/>
         </scaladoc>
         <zip destfile="${build.dir}/${scaladoc.zip}">
@@ -67,7 +67,7 @@
 
     <target name="-zip-src" depends="-compile">
         <jar destfile="${build.dir}/${src.zip}">
-            <fileset dir="${main.src.dir}"/>
+            <fileset dir="${main.src.dir}" excludes="${exclude.src.files}"/>
         </jar>
     </target>
 
@@ -92,4 +92,3 @@
     </target>
 
 </project>
-

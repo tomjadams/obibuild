@@ -2,6 +2,7 @@
 <project name="obi-setup" default="default" basedir=".">
 
     <property name="project.longname" value="Obi - A Scala and Java build tool"/>
+    <property name="project.midname" value="Obi"/>
     <property name="project.shortname" value="obi"/>
     <property name="project.version.major" value="0"/>
     <property name="project.version.minor" value="1.0"/>
@@ -31,9 +32,11 @@
     <property name="compile.deprecation" value="on"/>
     <property name="compile.force" value="never"/>
 
+    <property name="exclude.src.files" value="**/org/obi/example/*.scala"/>
+
     <patternset id="all.code.pattern">
         <include name="**/*.scala"/>
-        <exclude  name="**/SAntExample.scala"/>
+        <exclude name="**/SAntExample.scala"/>
     </patternset>
 
     <patternset id="main.classpath.pattern">

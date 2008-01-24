@@ -5,7 +5,7 @@ import org.obi.attr.SrcDir
 import org.obi.io.file.FilePath
 
 /**
- * The javac tool reads class and interface definitions, written in the Java programming language, and compiles them into bytecode class files.
+ * The javac tool reads class and interface definitions, written in the Java programming language, and compiles them into bytecode class files.<br/>
  * More information can be found on the following links:
  * <ul>
  * <li><a href="http://java.sun.com/javase/6/docs/technotes/tools/solaris/javac.html">Java programming language compiler</a>
@@ -14,7 +14,7 @@ import org.obi.io.file.FilePath
  */
 sealed trait Javac {
     // TODO Write more apply's here, to handle different attributes, files, etc.
-    
+
     def apply(srcdir: SrcDir): Javac = this match {
         case Javac_(_, d) => Javac_(Some(srcdir), d)
     }
