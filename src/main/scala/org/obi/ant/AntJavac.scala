@@ -23,6 +23,7 @@ final class AntJavac(j: Javac) {
     lazy val antJavac = new Javac()
 
     def srcfiles(srcFiles: List[String]) = new ExecutableTask {
+        // TODO Find a way to remove this logic. Put it somewhere else.
         override def execute {
             // TODO Set the project basedir, expose it somewhere.
             project.init
