@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <project name="obi" default="all" basedir=".">
+
     <import file="build-setup.xml"/>
+
+    <taskdef resource="scala/tools/ant/antlib.xml" classpathref="main.class.path"/>
 
     <target name="all" depends="clean,release"/>
     <target name="compile" depends="clean,-compile"/>
@@ -14,17 +17,49 @@
     </target>
 
     <target name="-compile">
+        <compile.all.macro/>
     </target>
 
     <target name="-spec"/>
 
+    <macrodef name="compile.all.macro">
+        <sequential>
+            <compile.macro classpath.ref="main.class.path" output.dir="${main.classes.dir}" src.path.ref="main.code.path"
+                    src.pattern="all.code.pattern"/>
+            <compile.macro classpath.ref="spec.class.path" output.dir="${spec.classes.dir}" src.path.ref="spec.code.path"
+                    src.pattern="all.code.pattern"/>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="compile.macro">
+        <attribute name="classpath.ref"/>
+        <attribute name="src.path.ref"/>
+        <attribute name="src.pattern"/>
+        <attribute name="output.dir"/>
+        <sequential>
+            <mkdir dir="@{output.dir}"/>
+            <scalac classpathref="@{classpath.ref}" destdir="@{output.dir}" force="${compile.force}" deprecation="${compile.deprecation}"
+                    unchecked="${compile.unchecked}">
+                <src>
+                    <path refid="@{src.path.ref}"/>
+                </src>
+                <patternset refid="@{src.pattern}"/>
+            </scalac>
+        </sequential>
+    </macrodef>
+
+    <target name="-scaladoc">
+        <mkdir dir="${scaladoc.dir}"/>
+        <scaladoc srcdir="${main.src.dir}" destdir="${scaladoc.dir}" classpathref="main.class.path"
+                windowtitle="${project.longname} ${project.version.full}" doctitle="${project.longname} ${project.version.full}">
+            <patternset refid="all.code.pattern"/>
+        </scaladoc>
+        <zip destfile="${build.dir}/${scaladoc.zip}">
+            <fileset dir="${scaladoc.dir}"/>
+        </zip>
+    </target>
+
     <target name="-jar-classes" depends="-compile">
-        <!--
-        Add the following, see: http://java.sun.com/j2se/1.3/docs/guide/versioning/spec/VersioningSpecification.html#PackageVersionSpecification
-            Implementation-Title: java.util
-            Implementation-Version: build57
-            Implementation-Vendor: SunMicrosystems. Inc.
-        -->
         <jar destfile="${build.dir}/${project.jar}">
             <fileset dir="${main.classes.dir}"/>
         </jar>
@@ -34,40 +69,6 @@
         <jar destfile="${build.dir}/${src.zip}">
             <fileset dir="${main.src.dir}"/>
         </jar>
-    </target>
-
-    <macrodef name="compile">
-        <attribute name="src"/>
-        <attribute name="classes"/>
-        <attribute name="classpath"/>
-        <sequential>
-            <taskdef resource="${scala.antlib}" classpathref="libs.path"/>
-            <mkdir dir="@{classes}"/>
-            <scalac srcdir="@{src}" destdir="@{classes}" force="always" deprecation="on" unchecked="on"
-                    classpathref="@{classpath}">
-                <include name="**/**.scala"/>
-            </scalac>
-        </sequential>
-    </macrodef>
-
-    <target name="scalac" depends="init, copy-src" description="compile the Scala source">
-        <compile src="${build.dir}/src" classes="${build.dir}/classes/src" classpath="libs.path"/>
-    </target>
-
-    <target name="scalac-test" depends="scalac, copy-test-src" description="compile the Scala test source">
-        <compile src="${build.dir}/test-src" classes="${build.dir}/classes/test-src" classpath="project.path"/>
-    </target>
-
-    <target name="-scaladoc">
-        <taskdef resource="scala/tools/ant/antlib.xml" classpathref="main.class.path"/>
-        <mkdir dir="${scaladoc.dir}"/>
-        <scaladoc srcdir="${main.src.dir}" destdir="${scaladoc.dir}" classpathref="main.class.path"
-                windowtitle="${project.longname} ${project.version.full}" doctitle="${project.longname} ${project.version.full}">
-            <patternset refid="all.code.pattern"/>
-        </scaladoc>
-        <zip destfile="${build.dir}/${scaladoc.zip}">
-            <fileset dir="${scaladoc.dir}"/>
-        </zip>
     </target>
 
     <target name="-release" depends="-jar-classes,-zip-src,-scaladoc">
@@ -80,38 +81,15 @@
                 <include name="RELEASE-NOTES"/>
             </fileset>
             <fileset dir="${build.dir}" includes="${project.jar}"/>
-            <fileset dir="${build.dir}" includes="${javadoc.zip}"/>
-            <zipfileset dir="${lib.dir}/ant" prefix="lib" includes="ant-1.*.jar,ant-license.txt"/>
-            <zipfileset dir="${lib.dir}/cglib" prefix="lib"/>
-            <zipfileset dir="${lib.dir}/hamcrest" prefix="lib"/>
-            <zipfileset dir="${lib.dir}/jmock" prefix="lib"/>
-            <zipfileset dir="${lib.dir}/junit" prefix="lib"/>
-            <zipfileset dir="${lib.dir}/objenesis" prefix="lib"/>
+            <fileset dir="${build.dir}" includes="${src.zip}"/>
+            <fileset dir="${build.dir}" includes="${scaladoc.zip}"/>
+            <zipfileset dir="${lib.dir}/ant" prefix="lib" excludes="ant-launcher-*.jar"/>
+            <zipfileset dir="${lib.dir}/scala" prefix="lib"/>
+            <zipfileset dir="${lib.dir}/scalaz" prefix="lib"/>
         </zip>
-
-
-
-        <mkdir dir="${release.dir}"/>
-        <zip destfile="${build.dir}/release/${release.file.prefix}.zip">
-            <zipfileset dir="${dest}"/>
-        </zip>
-        <tar destfile="${build.dir}/release/${release.file.prefix}.tar.gz" compression="gzip">
-            <tarfileset dir="${dest}"/>
-        </tar>
-        <checksum file="${build.dir}/release/${release.file.prefix}.zip" algorithm="MD5"/>
-        <checksum file="${build.dir}/release/${release.file.prefix}.zip" algorithm="SHA"/>
-        <checksum file="${build.dir}/release/${release.file.prefix}.tar.gz" algorithm="MD5"/>
-        <checksum file="${build.dir}/release/${release.file.prefix}.tar.gz" algorithm="SHA"/>
+        <checksum file="${release.dir}/${project.zip}" algorithm="MD5"/>
+        <checksum file="${release.dir}/${project.zip}" algorithm="SHA"/>
     </target>
-
-    <target name="dist-release" depends="release" description="copy release files">
-        <fail unless="dest" message="Set the dest property"/>
-        <mkdir dir="${dest}/release"/>
-        <copy todir="${dest}/release">
-            <fileset dir="${build.dir}/release" includes="**/**"/>
-        </copy>
-    </target>
-
 
 </project>
 
