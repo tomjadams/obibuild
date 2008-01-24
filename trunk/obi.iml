@@ -13,6 +13,7 @@
       <library name="Ant">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/ant/ant-1.7.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/ant/ant-launcher-1.7.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
