@@ -24,25 +24,15 @@ final class AntJavac(j: Javac) {
 
     def srcfiles(srcFiles: List[String]) = new ExecutableTask {
         // TODO Find a way to remove this logic. Put it somewhere else.
+        // TODO Expose the project basedir somewhere.
+        // TODO Expose the project name somewhere.
         override def execute {
-            // TODO Set the project basedir, expose it somewhere.
             project.init
-            // TODO Expose the project name somewhere.
             project.setName(project.getBaseDir.getName)
             antJavac.setProject(project)
-
-            println("Basedir: " + project.getBaseDir)
-            println("Project name: " + project.getName)
-
-            j.srcdir.foreach(srcdir => {
-                println("Setting srcdir: " + srcdir)
-                antJavac.setSrcdir(new Path(project, srcdir))
-            })
-            j.destdir.foreach(destdir => {
-                println("Setting destdir: " + destdir)
-                antJavac.setDestdir(new File(destdir))
-            })
-           antJavac.execute
+            j.srcdir.foreach(srcdir => antJavac.setSrcdir(new Path(project, srcdir)))
+            j.destdir.foreach(destdir => antJavac.setDestdir(new File(destdir)))
+            antJavac.execute
         }
     }
 }
