@@ -36,4 +36,11 @@ object ObiExample {
 
 // compile all Scala source files in an "obi" directory
 //    !scalac.srcdir("src/main/scala").include(".scala")
+
+}
+
+object ObiExampleApplication {
+   def main(args: Array[String]) {
+        
+    }
 }

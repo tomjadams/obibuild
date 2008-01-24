@@ -5,7 +5,7 @@ import org.obi.io.file.FilePath
 import org.obi.io.file.FilePath._
 
 /**
- * Where to find user class files.
+ * Where to find user class files.<br/>
  * Usage:
  * <pre>
  * val cp0 = classpath << classpath

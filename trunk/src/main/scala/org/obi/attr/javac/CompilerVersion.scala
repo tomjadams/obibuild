@@ -1,7 +1,7 @@
 package org.obi.attr.javac
 
 /**
-  * The version of the Java compiler.
+  * The version of the Java compiler.<br/>
   * More information can be found on the following links:
   * <ul>
   * <li><a href="http://java.sun.com/javase/6/docs/technotes/tools/solaris/javac.html">Java programming language compiler</a>
