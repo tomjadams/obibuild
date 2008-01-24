@@ -28,6 +28,7 @@ final class AntJavac(j: Javac) {
             project.init
             // TODO Expose the project name somewhere.
             project.setName(project.getBaseDir.getName)
+            antJavac.setProject(project)
 
             println("Basedir: " + project.getBaseDir)
             println("Project name: " + project.getName)
