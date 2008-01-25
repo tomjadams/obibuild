@@ -80,11 +80,14 @@ object ObiManualTests {
         println(p3)
     }
 
+    // TODO Use classpath
+    // TODO Use version
+    // TODO Use target
     def antJavacTests {
-        !javac(
-            srcdir("src/spec/data/java")).
+        val src = "Foo.java" << "Bar.java"
+        !javac.srcdir("src/spec/data/java").
             destdir("build/spec-classes").
-            srcfiles(List("Foo.java", "Bar.java"))
+            srcfiles("**/*.java")
     }
 
     def main(args: Array[String]) {
