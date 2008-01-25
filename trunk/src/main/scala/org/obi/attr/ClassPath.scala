@@ -28,6 +28,8 @@ import org.obi.io.file.FilePath._
  * </pre>
  */
 sealed trait ClassPath {
+    // TODO This class probably isn't a classpath, make it generic and add an alias to it called classpath.
+
     /**
      * Prepends the given path element to the start of the classpath.
      */

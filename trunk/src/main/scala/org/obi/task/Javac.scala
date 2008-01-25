@@ -13,6 +13,7 @@ import org.obi.io.file.FilePath
  * </ul>
  */
 sealed trait Javac {
+    // TODO srcdir should be the only required attribute
     // TODO Write more apply's here, to handle different attributes, files, etc.
 
     def apply(srcdir: SrcDir): Javac = this match {
@@ -22,6 +23,8 @@ sealed trait Javac {
     def apply(destdir: DestDir): Javac = this match {
         case Javac_(s, _) => Javac_(s, Some(destdir))
     }
+
+    def <<(srcdir: SrcDir): Javac = error("todo implement this")
 
     def srcdir(s: FilePath) = apply(SrcDir.srcdir(s))
 

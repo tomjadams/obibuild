@@ -1,9 +1,9 @@
 package org.obi.task
 
 /**
- * A task that can be executed.
+ * A task (unit of work) that can be executed.
  */
 trait ExecutableTask {
     def execute: Unit
-    def unary_! = execute
+    final def unary_! = execute
 }

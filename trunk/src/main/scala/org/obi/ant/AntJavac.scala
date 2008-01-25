@@ -22,7 +22,9 @@ final class AntJavac(j: Javac) {
     lazy val project = new Project()
     lazy val antJavac = new Javac()
 
-    def srcfiles(srcFiles: List[String]) = new ExecutableTask {
+    // TODO Use these source files.
+    def srcfiles(srcFilePattern: String) = new ExecutableTask {
+        // TODO Dos the project needs to go somewhere to be shared by other tasks??
         // TODO Find a way to remove this logic. Put it somewhere else.
         // TODO Expose the project basedir somewhere.
         // TODO Expose the project name somewhere.
@@ -30,7 +32,12 @@ final class AntJavac(j: Javac) {
             project.init
             project.setName(project.getBaseDir.getName)
             antJavac.setProject(project)
-            j.srcdir.foreach(srcdir => antJavac.setSrcdir(new Path(project, srcdir)))
+            j.srcdir.foreach(srcdir => {
+                val srcDirPath = new Path(project)
+                srcDirPath.setPath(srcdir)
+                antJavac.setSrcdir(srcDirPath)
+            })
+            antJavac.setIncludes("**/*.java")
             j.destdir.foreach(destdir => antJavac.setDestdir(new File(destdir)))
             antJavac.execute
         }
