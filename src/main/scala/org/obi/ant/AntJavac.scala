@@ -5,16 +5,18 @@ import org.obi.task.Javac
 /**
  * Implementation of the javac command using Apache Ant.
  */
-object AntJavac {
+object ExecutableJavac {
     // TODO Returning of the executable happens when the src dir is supplied
-    implicit def javacToAntJavac(j: Javac) = new AntJavac(j)
+    implicit def javacToExecutableJavac(javac: Javac) = new ExecutableJavac(javac)
 }
 
 /**
  * Implementation of the javac command using Apache Ant.
  */
-final class AntJavac(javac: Javac) {
+final class ExecutableJavac(javac: Javac) {
     // TODO This class gets called ExecutableJavac, put into Javac.scala.
+    // TODO Expose the project basedir somewhere.
+    // TODO Expose the project name somewhere.
     import org.apache.tools.ant.Project
     import org.obi.attr.SrcDir._
 
