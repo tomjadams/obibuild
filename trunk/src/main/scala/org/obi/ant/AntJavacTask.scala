@@ -7,11 +7,6 @@ import org.obi.attr.SrcDir._
 import org.obi.task.{Javac, ExecutableTask}
 
 final class AntJavacTask(project: Project, javac: Javac) extends ExecutableTask {
-    // TODO Dos the project needs to go somewhere to be shared by other tasks??
-    // TODO Find a way to remove this logic. Put it somewhere else.
-    // TODO Expose the project basedir somewhere.
-    // TODO Expose the project name somewhere.
-
     lazy val antJavac = new org.apache.tools.ant.taskdefs.Javac()
 
     override def execute {
