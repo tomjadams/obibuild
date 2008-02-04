@@ -7,3 +7,7 @@
 
   * Support compilation using javac
   * Support compilation using scalac
+
+= Goals =
+
+* stability, consistency, and repeatability
