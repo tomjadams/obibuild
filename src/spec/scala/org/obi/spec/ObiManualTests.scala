@@ -2,10 +2,10 @@ package org.obi.example
 
 import util.io.{FilePath, PathList}
 import util.io.FilePath._
+import util.io.PathList._
 import org.obi.ant.ExecutableJavac
 import org.obi.ant.ExecutableJavac._
-import org.obi.attr.{ClassPath, FilePattern, SrcDir}
-import org.obi.attr.ClassPath._
+import org.obi.attr.{FilePattern, SrcDir}
 import org.obi.attr.FilePattern._
 import org.obi.attr.SrcDir._
 import org.obi.task.Javac
@@ -14,26 +14,24 @@ import org.obi.task.Javac._
 // TODO Move these to Instinct tests.
 object ObiManualTests {
 
-    def classpathTest {
-        val cp0 = classpath << classpath
-        val cp1 = classpath("/foo/bar.jar", "/foo/baz.jar")
-        val cp2 = classpath(List("/foo/bar.jar", "/foo/baz.jar"))
-        val cp3 = classpath << "/foo/bar.jar" << "/foo/baz.jar"
-        val cp4 = classpath << List("/foo/bar.jar", "/foo/baz.jar")
-        val cp5 = "/foo/bar.jar" << classpath("/foo/baz.jar")
-        val cp6 = List("/foo/bar.jar", "/foo/baz.jar") <<: classpath
+    def pathlistTest {
+        val cp1 = pathlist("/foo/bar.jar", "/foo/baz.jar")
+        val cp2 = pathlist(List("/foo/bar.jar", "/foo/baz.jar"))
+        val cp3 = pathlist << "/foo/bar.jar" << "/foo/baz.jar"
+        val cp4 = pathlist << List("/foo/bar.jar", "/foo/baz.jar")
+        val cp5 = "/foo/bar.jar" << pathlist("/foo/baz.jar")
+        val cp6 = List("/foo/bar.jar", "/foo/baz.jar") <<: pathlist
         val cp7 = "/foo/bar.jar" << "/foo/baz.jar"
-        val cp8 = classpath("/foo/bar.jar") << classpath("/foo/baz.jar")
-        val cp9 = classpath("/foo/bar.jar") ::: classpath("/foo/baz.jar")
-        val cp10 = classpath("/foo/bar.jar") + classpath("/foo/baz.jar")
-        val cp11 = classpath("/foo/bar.jar") + "/foo/baz.jar"
-        val cp12 = "/foo/bar.jar" :: classpath("/foo/baz.jar")
+        val cp8 = pathlist("/foo/bar.jar") << pathlist("/foo/baz.jar")
+        val cp9 = pathlist("/foo/bar.jar") ::: pathlist("/foo/baz.jar")
+        val cp10 = pathlist("/foo/bar.jar") + pathlist("/foo/baz.jar")
+        val cp11 = pathlist("/foo/bar.jar") + "/foo/baz.jar"
+        val cp12 = "/foo/bar.jar" :: pathlist("/foo/baz.jar")
         val cp13: PathList = "/foo/bar.jar:/foo/baz.jar"
         val cp14: PathList = "/foo/bar.jar;/foo/baz.jar"
         val cp15: PathList = "/foo/bar.jar:/foo/baz.jar;/foo/quux.jar"
         val cps: String = "/foo/bar.jar" << "/foo/baz.jar"
 
-        println(" 0: " + cp0)
         println(" 1: " + cp1)
         println(" 2: " + cp2)
         println(" 3: " + cp3)
@@ -68,7 +66,7 @@ object ObiManualTests {
         println(p3)
     }
 
-    // TODO Use classpath
+    // TODO Use pathlist
     // TODO Use version
     // TODO Use target
     def antJavacTests {
@@ -79,7 +77,7 @@ object ObiManualTests {
     }
 
     def main(args: Array[String]): Unit = {
-        classpathTest
+        pathlistTest
 //        filepatternTests
         antJavacTests
     }

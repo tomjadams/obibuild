@@ -38,3 +38,12 @@ final class AnEmptyPathList {
     expect.that(pathlist << pathlist).isEqualTo(pathlist)
   }
 }
+
+final class APathList {
+  @Specification
+  def canBeCreatedANumberOfWays {
+    expect.that(pathlist("/foo/bar.jar", "/foo/baz.jar")).isEqualTo("/foo/bar.jar" << "/foo/baz.jar")
+//    expect.that().isEqualTo("/foo/bar.jar" << "/foo/baz.jar")
+  }
+}
+
