@@ -78,9 +78,8 @@ object ObiManualTests {
             srcfiles("**/*.java")
     }
 
-    def main(args: Array[String]) {
-//        filepathTest
-//        classpathTest
+    def main(args: Array[String]): Unit = {
+        classpathTest
 //        filepatternTests
         antJavacTests
     }

@@ -27,6 +27,7 @@ import java.io.File
  * </pre>
  */
 sealed trait PathList {
+  lazy val pathSeparatorChar = File.pathSeparatorChar.toString
 
   /**
    * Prepends the given path element to the start of the pathlist.
@@ -85,6 +86,11 @@ sealed trait PathList {
     case PathList_(Nil) => PathList_(suffix.map(filepath(_)))
     case PathList_(elements) => PathList_(elements ::: suffix.map(filepath(_)))
   }
+
+  override def toString = this match {
+    case PathList_(Nil) => ""
+    case PathList_(elements) => elements.map(fp => fp: String).mkString(pathSeparatorChar: String)
+  }
 }
 
 private final case class PathList_(elements: List[FilePath]) extends PathList
@@ -92,24 +98,17 @@ private final case class PathList_(elements: List[FilePath]) extends PathList
 object PathList {
   import java.util.regex.Pattern.compile
 
-  lazy val pathSeparatorChar = File.pathSeparatorChar.toString
   lazy val pathSeparatorMatchPattern = compile(".*[:|;].*")
   lazy val pathSeparatorSplitPattern = compile(":|;")
 
-  implicit def toSystemSpecificPath(pathList: PathList): String = pathList match {
-    case PathList_(Nil) => ""
-    case PathList_(elements) => {
-      elements.map(filePathToString(_)).mkString(pathSeparatorChar: String)
-    }
-  }
+  implicit def toSystemSpecificPath(pathList: PathList): String = pathList.toString
 
-  implicit def stringToPathList(s: String): PathList = {
+  implicit def stringToPathList(s: String): PathList =
     if (pathSeparatorMatchPattern.matcher(s).matches) {
       PathList_(pathSeparatorSplitPattern.split(s).map(filepath(_)).toList)
     } else {
       PathList_(List(filepath(s)))
     }
-  }
 
   implicit def filePathToPathList(filePath: FilePath): PathList = PathList_(List(filePath))
 
