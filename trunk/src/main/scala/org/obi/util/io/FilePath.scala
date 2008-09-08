@@ -25,13 +25,19 @@ private final case class FilePath_(path: String) extends FilePath {
 object FilePath {
   import java.io.File
 
-  implicit def filepath(filePath: String): FilePath = FilePath_(filePath)
+  implicit def filepath(filePath: String): FilePath = filePath match {
+    case null => null
+    case _ => FilePath_(filePath)
+  }
 
-  implicit def filepath(file: File): FilePath = file.getCanonicalPath
+  implicit def filepath(file: File): FilePath = file match {
+    case null => null
+    case _ => file.getCanonicalPath
+  }
 
   implicit def filePathToString(filePath: FilePath): String = filePath match {
-    case FilePath_(p) => p
     case null => null
+    case FilePath_(p) => p
   }
 
   implicit def stringToFile(filePath: String): File = filePath match {
@@ -40,9 +46,12 @@ object FilePath {
   }
 
   implicit def filePathToFile(filePath: FilePath): File = filePath match {
-    case FilePath_(filePath) => new File(filePath)
     case null => null
+    case FilePath_(filePath) => new File(filePath)
   }
 
-  implicit def filePathToScalazFile(filePath: FilePath): scalaz.io.File = scalaz.io.File.file(filePath)
+  implicit def filePathToScalazFile(filePath: FilePath): scalaz.io.File = filePath match {
+    case null => null
+    case _ => scalaz.io.File.file(filePath)
+  }
 }
