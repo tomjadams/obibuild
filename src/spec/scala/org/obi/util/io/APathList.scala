@@ -40,10 +40,25 @@ final class AnEmptyPathList {
 }
 
 final class APathList {
+  lazy val barBaz = "/foo/bar.jar" << "/foo/baz.jar"
+
   @Specification
   def canBeCreatedANumberOfWays {
-    expect.that(pathlist("/foo/bar.jar", "/foo/baz.jar")).isEqualTo("/foo/bar.jar" << "/foo/baz.jar")
-//    expect.that().isEqualTo("/foo/bar.jar" << "/foo/baz.jar")
+    expect.that(pathlist("/foo/bar.jar", "/foo/baz.jar")).isEqualTo(barBaz)
+    expect.that(pathlist(List("/foo/bar.jar", "/foo/baz.jar"))).isEqualTo(barBaz)
+    expect.that(pathlist << "/foo/bar.jar" << "/foo/baz.jar").isEqualTo(barBaz)
+    expect.that(pathlist << List("/foo/bar.jar", "/foo/baz.jar")).isEqualTo(barBaz)
+    expect.that("/foo/bar.jar" << pathlist("/foo/baz.jar")).isEqualTo(barBaz)
+    expect.that(List("/foo/bar.jar", "/foo/baz.jar") <<: pathlist).isEqualTo(barBaz)
+    expect.that("/foo/bar.jar" << "/foo/baz.jar").isEqualTo(barBaz)
+    expect.that(pathlist("/foo/bar.jar") << pathlist("/foo/baz.jar")).isEqualTo(barBaz)
+    expect.that(pathlist("/foo/bar.jar") ::: pathlist("/foo/baz.jar")).isEqualTo(barBaz)
+    expect.that(pathlist("/foo/bar.jar") + pathlist("/foo/baz.jar")).isEqualTo(barBaz)
+    expect.that(pathlist("/foo/bar.jar") + "/foo/baz.jar").isEqualTo(barBaz)
+    expect.that("/foo/bar.jar" :: pathlist("/foo/baz.jar")).isEqualTo(barBaz)
+//    expect.that().isEqualTo(barBaz)
+//    expect.that().isEqualTo(barBaz)
+//    expect.that().isEqualTo(barBaz)
   }
 }
 
