@@ -20,8 +20,6 @@ import com.googlecode.instinct.expect.Expect._
 import com.googlecode.instinct.marker.annotate.Specification
 import PathList._
 
-// TODO Check: varargs call, list call
-
 final class AnEmptyPathList {
   @Specification
   def isEmpty {
@@ -56,9 +54,33 @@ final class APathList {
     expect.that(pathlist("/foo/bar.jar") + pathlist("/foo/baz.jar")).isEqualTo(barBaz)
     expect.that(pathlist("/foo/bar.jar") + "/foo/baz.jar").isEqualTo(barBaz)
     expect.that("/foo/bar.jar" :: pathlist("/foo/baz.jar")).isEqualTo(barBaz)
-//    expect.that().isEqualTo(barBaz)
-//    expect.that().isEqualTo(barBaz)
-//    expect.that().isEqualTo(barBaz)
   }
 }
 
+final class AStringContainingAListOfPaths {
+  lazy val barBaz = "/foo/bar.jar" << "/foo/baz.jar"
+
+  @Specification
+  def isParsedIntoAPathList {
+    expect.that("/foo/bar.jar:/foo/baz.jar": PathList).isEqualTo("/foo/bar.jar" << "/foo/baz.jar")
+    expect.that("/foo/bar.jar;/foo/baz.jar": PathList).isEqualTo("/foo/bar.jar" << "/foo/baz.jar")
+    expect.that("/foo/bar.jar:/foo/baz.jar;/foo/quux.jar": PathList).isEqualTo("/foo/bar.jar" << "/foo/baz.jar" << "/foo/quux.jar")
+  }
+}
+
+final class FilePaths {
+  import FilePath._
+
+  lazy val log4j = filepath("log4j.jar")
+  lazy val cglib = filepath("cglib.jar")
+  lazy val commons_logging = filepath("commons-logging.jar") <<: log4j
+  lazy val ehcache = commons_logging << "ehcache.jar"
+  lazy val hibernate = ehcache + commons_logging + cglib
+
+  @Specification
+  def canBeComposedIntoPathListsWithoutDuplication {
+    expect.that(commons_logging: String).isEqualTo("commons-logging.jar:log4j.jar")
+    expect.that(ehcache: String).isEqualTo("commons-logging.jar:log4j.jar:ehcache.jar")
+    expect.that(hibernate: String).isEqualTo("ehcache.jar:commons-logging.jar:log4j.jar:cglib.jar")
+  }
+}

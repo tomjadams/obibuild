@@ -15,16 +15,6 @@ import org.obi.task.Javac._
 object ObiManualTests {
 
     def pathlistTest {
-        val cp13: PathList = "/foo/bar.jar:/foo/baz.jar"
-        val cp14: PathList = "/foo/bar.jar;/foo/baz.jar"
-        val cp15: PathList = "/foo/bar.jar:/foo/baz.jar;/foo/quux.jar"
-        val cps: String = "/foo/bar.jar" << "/foo/baz.jar"
-
-        println("13: " + cp13)
-        println("14: " + cp14)
-        println("15: " + cp15)
-        println("cps: " + cps)
-
         val log4j = filepath("log4j.jar")
         val cglib = filepath("cglib.jar")
         val commons_logging = filepath("commons-logging.jar") <<: log4j

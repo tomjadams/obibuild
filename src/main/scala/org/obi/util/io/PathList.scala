@@ -89,7 +89,7 @@ sealed trait PathList {
 
   override def toString = this match {
     case PathList_(Nil) => ""
-    case PathList_(elements) => elements.map(fp => fp: String).mkString(pathSeparatorChar: String)
+    case PathList_(elements) => elements.removeDuplicates.map(fp => fp: String).mkString(pathSeparatorChar: String)
   }
 }
 
