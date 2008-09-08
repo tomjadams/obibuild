@@ -63,5 +63,3 @@ final class AFilePath {
     expect.that(filepath("/foo/bar.jar"): File).isEqualTo(scalaz.io.File.file("/foo/bar.jar"))
   }
 }
-
-

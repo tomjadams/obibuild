@@ -18,11 +18,23 @@ package org.obi.util.io
 
 import com.googlecode.instinct.expect.Expect._
 import com.googlecode.instinct.marker.annotate.Specification
+import PathList._
 
-final class APathList {
-  // TODO Check: varargs call, list call 
+// TODO Check: varargs call, list call
+
+final class AnEmptyPathList {
+  @Specification
+  def isEmpty {
+    expect.that(pathlist).isEqualTo(pathlist)
+  }
 
   @Specification
-  def spec {
+  def givesTheEmptyString {
+    expect.that(pathlist: String).isEqualTo("")
+  }
+
+  @Specification
+  def canBeAppendedWithAnotherEmptyPathList {
+    expect.that(pathlist << pathlist).isEqualTo(pathlist)
   }
 }
