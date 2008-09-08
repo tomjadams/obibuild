@@ -1,8 +1,8 @@
 package org.obi.attr
 
 import java.io.File
-import org.obi.io.file.FilePath
-import org.obi.io.file.FilePath._
+import org.obi.util.io.FilePath
+import org.obi.util.io.FilePath._
 
 /**
  * Where to find user class files.<br/>
@@ -47,8 +47,8 @@ sealed trait ClassPath {
      * Prepends the given list of path elements to the start of the classpath.
      */
     def <<:(prefix: List[String]): ClassPath = this match {
-        case ClassPath_(Nil) => ClassPath_(prefix.map(path(_)))
-        case ClassPath_(elements) => ClassPath_(elements ::: prefix.map(path(_)))
+        case ClassPath_(Nil) => ClassPath_(prefix.map(filepath(_)))
+        case ClassPath_(elements) => ClassPath_(elements ::: prefix.map(filepath(_)))
     }
 
     /**
@@ -84,8 +84,8 @@ sealed trait ClassPath {
      * Appends the given list of path elements to the end of the classpath.
      */
     def <<(suffix: List[String]): ClassPath = this match {
-        case ClassPath_(Nil) => ClassPath_(suffix.map(path(_)))
-        case ClassPath_(elements) => ClassPath_(elements ::: suffix.map(path(_)))
+        case ClassPath_(Nil) => ClassPath_(suffix.map(filepath(_)))
+        case ClassPath_(elements) => ClassPath_(elements ::: suffix.map(filepath(_)))
     }
 }
 
@@ -93,7 +93,6 @@ sealed trait ClassPath {
 private final case class ClassPath_(elements: List[FilePath]) extends ClassPath
 
 object ClassPath {
-    import scalaz.control.Foldable._
     import java.util.regex.Pattern.compile
 
     lazy val pathSeparatorChar = File.pathSeparatorChar.toString
@@ -103,15 +102,15 @@ object ClassPath {
     implicit def toSystemSpecificPath(classPath: ClassPath): String = classPath match {
         case ClassPath_(Nil) => ""
         case ClassPath_(elements) => {
-            intersperse[List, List, String](List(pathSeparatorChar), elements.map(FilePath.toString(_)).toList).foldLeft("")(_ + _)
+            elements.map(filePathToString(_)).mkString(pathSeparatorChar: String)
         }
     }
 
     implicit def stringToClassPath(s: String): ClassPath = {
         if (pathSeparatorMatchPattern.matcher(s).matches) {
-            ClassPath_(pathSeparatorSplitPattern.split(s).map(path(_)).toList)
+            ClassPath_(pathSeparatorSplitPattern.split(s).map(filepath(_)).toList)
         } else {
-            ClassPath_(List(path(s)))
+            ClassPath_(List(filepath(s)))
         }
     }
 
@@ -119,7 +118,7 @@ object ClassPath {
 
     def classpath: ClassPath = ClassPath_(Nil)
 
-    def classpath(pathElements: String*): ClassPath = ClassPath_(pathElements.map(path(_)).toList)
+    def classpath(pathElements: String*): ClassPath = ClassPath_(pathElements.map(filepath(_)).toList)
 
-    def classpath(pathElements: List[String]): ClassPath = ClassPath_(pathElements.map(path(_)))
+    def classpath(pathElements: List[String]): ClassPath = ClassPath_(pathElements.map(filepath(_)))
 }

@@ -39,9 +39,7 @@ final case object Vars extends DebugInformation {
  * All debugging information (source, lines, vars) will be added to the bytecode.
  */
 final case object All extends DebugInformation {
-    import scalaz.control.Foldable._
-
     lazy val types = List(Source, Lines, Vars)
 
-    override def option = intersperse[List, List, String](List(","), types.map(_.option)).foldLeft("")(_ + _)
+    override def option = types.map(_.option).mkString(",")
 }
