@@ -22,7 +22,6 @@ private final case class FilePath_(path: String) extends FilePath {
   override def toString = path
 }
 
-// TODO Handle null for passed params correctly.
 object FilePath {
   import java.io.File
 
