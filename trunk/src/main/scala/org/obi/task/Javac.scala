@@ -13,7 +13,9 @@ import org.obi.util.io.FilePath
  * </ul>
  */
 sealed trait Javac {
-    // TODO srcdir should be the only required attribute
+    // TODO srcdir should be the only required attribute, make a complete & an incomplete srcdir? See furnace code.
+    // TODO srcdir should be a list
+    // TODO add in patterns for source
     // TODO Write more apply's here, to handle different attributes, files, etc.
 
     def apply(srcdir: SrcDir): Javac = this match {
