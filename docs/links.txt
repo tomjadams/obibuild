@@ -4,6 +4,8 @@ http://rake.rubyforge.org/classes/Rake/Application.html
 http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/155295
 http://onestepback.org/index.cgi/Tech/Rake/Tutorial
 http://www.railsenvy.com/2007/6/11/ruby-on-rails-rake-tutorial
+http://martinfowler.com/articles/rake.html
+
 
 SAnt
 

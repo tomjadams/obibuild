@@ -5,7 +5,7 @@
 
     <taskdef resource="scala/tools/ant/antlib.xml" classpathref="main.class.path"/>
 
-    <target name="all" depends="clean,release"/>
+    <target name="all" depends="clean,spec,release"/>
     <target name="compile" depends="clean,-compile"/>
     <target name="spec" depends="clean,-spec"/>
     <target name="scaladoc" depends="clean,-scaladoc"/>
@@ -20,7 +20,15 @@
         <compile.all.macro/>
     </target>
 
-    <target name="-spec"/>
+  <target name="-spec" depends="-compile">
+    <java classname="org.obi.spec.SpecificationRunner" fork="true" classpathref="spec.class.path"/>
+    <!--<instinct failureproperty="specs-failed">-->
+    <!--<classpath refid="spec.class.path"/>-->
+    <!--<specifications dir="${spec.classes.dir}"/>-->
+    <!--<formatter type="brief"/>-->
+    <!--</instinct>-->
+    <!--<fail if="specs-failed" message="Specifications failed."/>-->
+  </target>
 
     <macrodef name="compile.all.macro">
         <sequential>

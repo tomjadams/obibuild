@@ -2,7 +2,7 @@ package org.obi.task
 
 import org.obi.attr.DestDir
 import org.obi.attr.SrcDir
-import org.obi.io.file.FilePath
+import org.obi.util.io.FilePath
 
 /**
  * The javac tool reads class and interface definitions, written in the Java programming language, and compiles them into bytecode class files.<br/>

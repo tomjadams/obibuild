@@ -1,6 +1,6 @@
 package org.obi.attr
 
-import org.obi.io.file.FilePath
+import org.obi.util.io.FilePath
 
 /**
  * The destination directory of an action.
