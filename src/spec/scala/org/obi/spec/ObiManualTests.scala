@@ -14,17 +14,6 @@ import org.obi.task.Javac._
 // TODO Move these to Instinct tests.
 object ObiManualTests {
 
-    def filepathTest {
-        val p1 = filepath("/foo/bar.jar")
-        val p2 = filepath("/foo/bar.jar")
-        val p3: FilePath = "/foo/bar.jar"
-        val p4: String = filepath("/foo/bar.jar")
-        println(p1)
-        println(p2)
-        println(p3)
-        println(p4)
-    }
-
     def classpathTest {
         val cp0 = classpath << classpath
         val cp1 = classpath("/foo/bar.jar", "/foo/baz.jar")
