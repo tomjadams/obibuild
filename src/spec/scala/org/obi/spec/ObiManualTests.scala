@@ -1,14 +1,12 @@
 package org.obi.example
 
-import util.io.FilePath
+import util.io.{FilePath, PathList}
 import util.io.FilePath._
 import org.obi.ant.ExecutableJavac
 import org.obi.ant.ExecutableJavac._
-import org.obi.attr.ClassPath
+import org.obi.attr.{ClassPath, FilePattern, SrcDir}
 import org.obi.attr.ClassPath._
-import org.obi.attr.FilePattern
 import org.obi.attr.FilePattern._
-import org.obi.attr.SrcDir
 import org.obi.attr.SrcDir._
 import org.obi.task.Javac
 import org.obi.task.Javac._
@@ -41,9 +39,9 @@ object ObiManualTests {
         val cp10 = classpath("/foo/bar.jar") + classpath("/foo/baz.jar")
         val cp11 = classpath("/foo/bar.jar") + "/foo/baz.jar"
         val cp12 = "/foo/bar.jar" :: classpath("/foo/baz.jar")
-        val cp13: ClassPath = "/foo/bar.jar:/foo/baz.jar"
-        val cp14: ClassPath = "/foo/bar.jar;/foo/baz.jar"
-        val cp15: ClassPath = "/foo/bar.jar:/foo/baz.jar;/foo/quux.jar"
+        val cp13: PathList = "/foo/bar.jar:/foo/baz.jar"
+        val cp14: PathList = "/foo/bar.jar;/foo/baz.jar"
+        val cp15: PathList = "/foo/bar.jar:/foo/baz.jar;/foo/quux.jar"
         val cps: String = "/foo/bar.jar" << "/foo/baz.jar"
 
         println(" 0: " + cp0)
